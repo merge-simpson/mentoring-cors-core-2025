@@ -25,10 +25,10 @@ public class CorsConfig implements WebMvcConfigurer {
         var exposed = corsProperties.exposed();
         var maxAge = corsProperties.maxAge();
 
-        registry.addMapping("/**")
+        registry.addMapping("/**") // 서버 쪽 엔드포인트들
                 .allowedHeaders(allowed.headers()) // *: asterisk, 기능적으로 "와일드카드" 역할로 자주 사용됨.
                 .allowedMethods(allowed.methods()) // 공통(GET, POST, PUT, PATCH, DELETE, HEAD, OPTION, TRACE) + 확장된 메서드들
-                .allowedOrigins(allowed.origins())
+                .allowedOrigins(allowed.origins()) // <<< 클라이언트 쪽 주소창 주소
                 .allowCredentials(allowed.credentials())
                 .exposedHeaders(exposed.headers())
                 .maxAge(maxAge);
