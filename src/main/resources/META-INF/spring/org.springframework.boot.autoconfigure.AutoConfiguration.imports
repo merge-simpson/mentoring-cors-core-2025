@@ -1,1 +1,1 @@
-com.example.webmvc.config.WebMvcCorsConfig
+com.example.web.CorsConfig

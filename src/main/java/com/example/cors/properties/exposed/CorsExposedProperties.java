@@ -1,4 +1,7 @@
-package com.example.cors.properties.allowed;
+package com.example.cors.properties.exposed;
 
-public record CorsAllowedProperties() {
+import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
+
+@ConfigurationPropertiesBinding
+public record CorsExposedProperties(String[] headers) {
 }
